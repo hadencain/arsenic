@@ -10,22 +10,13 @@ export function Catalog() {
   return (
     <section className="relative min-h-screen pt-28 md:pt-36 pb-16 px-8 md:px-16 lg:px-24">
       <motion.h1
-        className="display text-6xl md:text-7xl text-paper leading-[0.95] mb-4 select-none"
+        className="display text-6xl md:text-7xl text-paper leading-[0.95] mb-16 select-none"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: EASE }}
       >
         Arsenic
       </motion.h1>
-      <motion.p
-        className="text-[13px] text-paper-dim font-light max-w-md mb-16 leading-relaxed"
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.12, ease: EASE }}
-      >
-        An audio instrument label. Spectral processors, terminal instruments,
-        and sample tools — small, sharp, and built to be played.
-      </motion.p>
 
       <div className="flex flex-col max-w-3xl">
         {TOOLS.map((t, i) => (
