@@ -13,7 +13,7 @@ const display = IM_Fell_English({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://arsenic.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://arsenic-pi.vercel.app"
   ),
   title: "Arsenic",
   description:
