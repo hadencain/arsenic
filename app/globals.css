@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* ── Arsenic token system ────────────────────────────────────────────────────
+   Poison-print offshoot of PRESSWORK: same ink-and-paper bones, the blood
+   plate replaced by Scheele's green. Green is functional, never decorative. */
+
+@theme {
+  --color-ink: #0f120e;
+  --color-ink-2: #171c15;
+  --color-ink-3: #262e23;
+  --color-paper: #dfdbcc;
+  --color-paper-dim: #aeab99;
+  --color-paper-mute: #868376;
+  --color-arsenic: #2e7d43;
+  --color-arsenic-bright: #55c06a;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display-face);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  background-color: #0f120e;
+  color: #dfdbcc;
+  font-family: var(--font-geist-sans), ui-sans-serif, sans-serif;
+}
+
+::selection { background-color: #2e7d43; color: #dfdbcc; }
+
+:focus-visible { outline: 2px solid rgba(85, 192, 106, 0.9); outline-offset: 3px; }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #0f120e; }
+::-webkit-scrollbar-thumb { background: #39412f; }
+
+/* Display face — antique book type; the poison-label voice */
+.display {
+  font-family: var(--font-display-face), "IM Fell English", serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Photocopy grain, ported verbatim from PRESSWORK */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.055;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+}
