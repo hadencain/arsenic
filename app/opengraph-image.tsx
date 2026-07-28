@@ -9,7 +9,7 @@ export const alt = "Arsenic — an audio instrument label";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default async function OgImage() {
+export default function OgImage() {
   return new ImageResponse(
     (
       <div
