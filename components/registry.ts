@@ -4,10 +4,20 @@
 
 import data from "./registry-data.json";
 
+export type ToolState = "shipping" | "trial" | "theory" | "delisted";
+
+export interface SpecRow {
+  label: string;
+  value: string;
+}
+
 export interface Tool {
   slug: string;
   title: string;
   rank: number;       // shelf order — a label curates, it doesn't taxonomize
+  state: ToolState;   // shelf section — the split is by dev reality, not rank
+  price?: string;     // present only on the shipping tool; rendered verbatim
+  specs: SpecRow[];   // dose-panel rows, rendered verbatim in order
   pitch: string;      // one sentence; catalog row + OG description
   audience: string;   // "who it's for" line, in the audience's vocabulary
   tag: string;        // Buttondown tag; always === slug (unchanged from the portfolio era)
@@ -19,8 +29,12 @@ export interface Tool {
 
 export const BUTTONDOWN_USERNAME = "hadencain";
 
-export const TOOLS = [...(data.tools as Tool[])].sort((a, b) => a.rank - b.rank);
+export const TOOLS = [...(data.tools as unknown as Tool[])].sort((a, b) => a.rank - b.rank);
 
 export function toolBySlug(slug: string): Tool | undefined {
   return TOOLS.find((t) => t.slug === slug);
+}
+
+export function toolsByState(state: ToolState): Tool[] {
+  return TOOLS.filter((t) => t.state === state);
 }

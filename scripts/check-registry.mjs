@@ -17,6 +17,7 @@ const errors = [];
 const seen = new Set();
 const ranks = new Set();
 const REQUIRED = ["slug", "title", "pitch", "audience", "tag", "capturePrompt", "captureCta"];
+const STATES = ["shipping", "trial", "theory", "delisted"];
 
 for (const t of data.tools) {
   const id = t.slug ?? "(missing slug)";
@@ -28,6 +29,21 @@ for (const t of data.tools) {
   if (ranks.has(t.rank)) errors.push(`${id}: duplicate rank ${t.rank}`);
   ranks.add(t.rank);
   if (t.tag !== t.slug) errors.push(`${id}: tag ("${t.tag}") must equal slug`);
+  if (!STATES.includes(t.state))
+    errors.push(`${id}: "state" must be one of ${STATES.join(" | ")}`);
+  if (!Array.isArray(t.specs) || t.specs.length === 0)
+    errors.push(`${id}: missing nonempty "specs" array`);
+  else
+    for (const row of t.specs)
+      if (
+        typeof row.label !== "string" || row.label.length === 0 ||
+        typeof row.value !== "string" || row.value.length === 0
+      )
+        errors.push(`${id}: every specs row needs nonempty "label" and "value"`);
+  if (t.state === "shipping" && (typeof t.price !== "string" || t.price.length === 0))
+    errors.push(`${id}: shipping tool needs a nonempty "price"`);
+  if (t.state !== "shipping" && t.price !== undefined)
+    errors.push(`${id}: only the shipping tool carries a "price"`);
   if (seen.has(t.slug)) errors.push(`duplicate slug "${t.slug}"`);
   seen.add(t.slug);
   if (!existsSync(path.join(repo, "app/(tools)", t.slug, "page.tsx")))
@@ -37,6 +53,10 @@ for (const t of data.tools) {
       errors.push(`${id}: referenced asset ${p} missing from public/`);
   }
 }
+
+const shippingCount = data.tools.filter((t) => t.state === "shipping").length;
+if (shippingCount !== 1)
+  errors.push(`exactly one tool must have state "shipping" (found ${shippingCount})`);
 
 const toolsDir = path.join(repo, "app/(tools)");
 const dirs = existsSync(toolsDir)
