@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, IM_Fell_English } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { Footer } from "@/components/footer";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -37,6 +38,7 @@ export default function RootLayout({
     >
       <body className="antialiased">
         {children}
+        <Footer />
         <div className="grain" aria-hidden />
         <Analytics />
       </body>
