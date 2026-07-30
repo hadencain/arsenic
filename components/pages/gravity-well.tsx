@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { toolBySlug } from "../registry";
 import { AudienceLine, FeatureBeats, MediaSlot } from "../landing-kit";
 import { EmailCapture } from "../email-capture";
+import { SpecPanel } from "../spec-panel";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const tool = toolBySlug("gravity-well")!;
@@ -100,6 +101,7 @@ export function GravityWellLanding() {
       <AudienceLine>{tool.audience}</AudienceLine>
       <MediaSlot src={tool.screenshot} alt={`${tool.title} interface`} />
       <FeatureBeats beats={BEATS} />
+      <SpecPanel specs={tool.specs} />
       <EmailCapture
         tag={tool.tag}
         prompt={tool.capturePrompt}
