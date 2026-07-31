@@ -4,6 +4,7 @@ import { SUPPORT_EMAIL } from "@/components/registry";
 export const metadata: Metadata = {
   title: "License — Arsenic",
   description: "End-user license agreement for Arsenic audio tools.",
+  openGraph: { title: "License — Arsenic", description: "End-user license agreement for Arsenic audio tools." },
 };
 
 const TERMS = [

@@ -4,6 +4,7 @@ import { SUPPORT_EMAIL } from "@/components/registry";
 export const metadata: Metadata = {
   title: "Refunds — Arsenic",
   description: "Refund policy for Arsenic audio tools.",
+  openGraph: { title: "Refunds — Arsenic", description: "Refund policy for Arsenic audio tools." },
 };
 
 const POLICY = [

@@ -64,7 +64,7 @@ for (const t of data.tools) {
   seen.add(t.slug);
   if (!existsSync(path.join(repo, "app/(tools)", t.slug, "page.tsx")))
     errors.push(`${id}: app/(tools)/${t.slug}/page.tsx does not exist`);
-  for (const p of [t.screenshot, t.ogImage]) {
+  for (const p of [t.screenshot]) {
     if (p && !existsSync(path.join(repo, "public", p)))
       errors.push(`${id}: referenced asset ${p} missing from public/`);
   }

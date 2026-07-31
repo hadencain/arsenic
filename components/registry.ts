@@ -24,7 +24,6 @@ export interface Tool {
   tag: string;        // Buttondown tag; always === slug (unchanged from the portfolio era)
   screenshot?: string;
   screenshotSize?: { w: number; h: number };
-  ogImage?: string;
   capturePrompt: string;
   captureCta: string;
 }

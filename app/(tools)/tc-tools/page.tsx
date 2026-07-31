@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${tool.title} — Arsenic`,
     description: tool.pitch,
-    images: [tool.ogImage ?? "/opengraph-image"],
   },
 };
 

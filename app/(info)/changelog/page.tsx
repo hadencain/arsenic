@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Changelog — Arsenic",
   description: "Release notes across the Arsenic catalog.",
+  openGraph: { title: "Changelog — Arsenic", description: "Release notes across the Arsenic catalog." },
 };
 
 const ENTRIES = [
