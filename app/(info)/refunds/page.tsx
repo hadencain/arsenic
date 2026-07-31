@@ -7,9 +7,9 @@ export const metadata: Metadata = {
 };
 
 const POLICY = [
-  { name: "Window", text: "Fourteen days from purchase, no questions asked." },
+  { name: "Window", text: "Thirty days from purchase, no questions asked." },
   { name: "How", text: `Email ${SUPPORT_EMAIL} from your purchase address with the order reference. Refunds return to the original payment method; the license is revoked on refund.` },
-  { name: "Status", text: "Checkout has not yet opened. This is the policy that will govern the first sale." },
+  { name: "Status", text: "Purchases run through Gumroad; refunds are honored there and by email alike." },
 ];
 
 export default function RefundsPage() {
