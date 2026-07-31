@@ -16,7 +16,8 @@ export interface Tool {
   title: string;
   rank: number;       // shelf order — a label curates, it doesn't taxonomize
   state: ToolState;   // shelf section — the split is by dev reality, not rank
-  price?: string;     // present only on the shipping tool; rendered verbatim
+  price?: string;     // required on shipping tools; rendered verbatim
+  buyUrl?: string;    // storefront checkout link; shipping tools only — absent = capture handoff
   specs: SpecRow[];   // dose-panel rows, rendered verbatim in order
   pitch: string;      // one sentence; catalog row + OG description
   audience: string;   // "who it's for" line, in the audience's vocabulary

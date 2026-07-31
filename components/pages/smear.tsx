@@ -5,6 +5,7 @@ import { toolBySlug } from "../registry";
 import { AudienceLine, FeatureBeats, MediaSlot } from "../landing-kit";
 import { EmailCapture } from "../email-capture";
 import { SpecPanel } from "../spec-panel";
+import { AcquireBlock } from "../acquire-block";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const tool = toolBySlug("smear")!;
@@ -98,12 +99,15 @@ export function SmearLanding() {
       <MediaSlot src={tool.screenshot} alt={`${tool.title} interface`} />
       <FeatureBeats beats={BEATS} />
       <SpecPanel specs={tool.specs} />
+      <AcquireBlock tool={tool} />
+      <div id="notify" className="scroll-mt-28">
       <EmailCapture
         tag={tool.tag}
         prompt={tool.capturePrompt}
         cta={tool.captureCta}
         hint={CAPTURE_HINT}
       />
+      </div>
 
     </section>
   );

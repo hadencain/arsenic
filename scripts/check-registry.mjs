@@ -4,8 +4,9 @@
 // Plus: required nonempty fields, tag === slug, unique slugs, unique ranks,
 // referenced screenshots exist under public/, state is a known enum, specs
 // shape + unique labels per tool, price present iff state is shipping,
-// exactly one shipping tool, screenshot/screenshotSize pair together, and
-// the portfolio's pinned 301-redirect targets stay in the registry.
+// at least one shipping tool, buyUrl only on shipping tools, screenshot/
+// screenshotSize pair together, and the portfolio's pinned 301-redirect
+// targets stay in the registry.
 
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import path from "node:path";
@@ -52,7 +53,13 @@ for (const t of data.tools) {
   if (t.state === "shipping" && (typeof t.price !== "string" || t.price.length === 0))
     errors.push(`${id}: shipping tool needs a nonempty "price"`);
   if (t.state !== "shipping" && t.price !== undefined)
-    errors.push(`${id}: only the shipping tool carries a "price"`);
+    errors.push(`${id}: only shipping tools carry a "price"`);
+  if (t.buyUrl !== undefined) {
+    if (typeof t.buyUrl !== "string" || t.buyUrl.length === 0)
+      errors.push(`${id}: "buyUrl" must be a nonempty string`);
+    if (t.state !== "shipping")
+      errors.push(`${id}: "buyUrl" is only valid on shipping tools`);
+  }
   if (seen.has(t.slug)) errors.push(`duplicate slug "${t.slug}"`);
   seen.add(t.slug);
   if (!existsSync(path.join(repo, "app/(tools)", t.slug, "page.tsx")))
@@ -75,8 +82,8 @@ for (const t of data.tools) {
 }
 
 const shippingCount = data.tools.filter((t) => t.state === "shipping").length;
-if (shippingCount !== 1)
-  errors.push(`exactly one tool must have state "shipping" (found ${shippingCount})`);
+if (shippingCount < 1)
+  errors.push(`at least one tool must have state "shipping" (found ${shippingCount})`);
 
 const PINNED = ["tc-tools", "sample-viewer", "audio-sort"]; // portfolio 301 targets — never delete
 for (const s of PINNED)

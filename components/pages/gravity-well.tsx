@@ -5,6 +5,7 @@ import { toolBySlug } from "../registry";
 import { AudienceLine, FeatureBeats, MediaSlot } from "../landing-kit";
 import { EmailCapture } from "../email-capture";
 import { SpecPanel } from "../spec-panel";
+import { AcquireBlock } from "../acquire-block";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const tool = toolBySlug("gravity-well")!;
@@ -102,28 +103,7 @@ export function GravityWellLanding() {
       <MediaSlot src={tool.screenshot} alt={`${tool.title} interface`} size={tool.screenshotSize} />
       <FeatureBeats beats={BEATS} />
       <SpecPanel specs={tool.specs} />
-      <motion.div
-        id="acquire"
-        className="mb-16 max-w-md scroll-mt-28"
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.8, ease: EASE }}
-      >
-        <div className="flex items-baseline gap-4">
-          <span className="font-mono text-[16px] text-arsenic-bright">{tool.price}</span>
-          <span className="text-[12px] text-[#868376] font-light">Windows VST3 installer</span>
-        </div>
-        <a
-          href="#notify"
-          className="mt-4 inline-block border border-arsenic px-5 py-2.5 font-mono text-[11px] tracking-[0.22em] text-arsenic-bright hover:bg-arsenic/20 transition-colors duration-300"
-        >
-          GET NOTIFIED
-        </a>
-        <p className="mt-3 text-[11px] text-[#7c7a6d] font-light leading-relaxed">
-          Checkout opens soon — the release email carries the buy link first.
-        </p>
-      </motion.div>
+      <AcquireBlock tool={tool} />
       <div id="notify" className="scroll-mt-28">
         <EmailCapture
           tag={tool.tag}
