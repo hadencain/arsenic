@@ -18,7 +18,7 @@ const BEATS = [
 ];
 
 const CAPTURE_HINT =
-  "Leave an email and the Windows VST3 installer lands in your inbox when it ships. One email per release, nothing else.";
+  "Release notes and version updates, straight to your inbox. One email per release, nothing else.";
 
 // 36 rays, deterministic lengths; two alternating groups pulse outward
 // out of phase so the field breathes.

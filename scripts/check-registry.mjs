@@ -85,6 +85,12 @@ const shippingCount = data.tools.filter((t) => t.state === "shipping").length;
 if (shippingCount < 1)
   errors.push(`at least one tool must have state "shipping" (found ${shippingCount})`);
 
+if (data.bundle !== undefined) {
+  for (const f of ["title", "price", "url"])
+    if (typeof data.bundle[f] !== "string" || data.bundle[f].length === 0)
+      errors.push(`bundle: missing or empty "${f}"`);
+}
+
 const PINNED = ["tc-tools", "sample-viewer", "audio-sort"]; // portfolio 301 targets — never delete
 for (const s of PINNED)
   if (!data.tools.find((t) => t.slug === s))

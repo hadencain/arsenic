@@ -18,7 +18,7 @@ const BEATS = [
 ];
 
 const CAPTURE_HINT =
-  "Leave an email and the Windows VST3 installer lands in your inbox when it ships. One email per release, nothing else.";
+  "Release notes and version updates, straight to your inbox. One email per release, nothing else.";
 
 // Hand-placed shatter web: an impact point at (118,112), primary cracks
 // radiating out, secondary cracks bridging them. Deterministic.

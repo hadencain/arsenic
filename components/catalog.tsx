@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { toolsByState, type Tool } from "./registry";
+import { BUNDLE, toolsByState, type Tool } from "./registry";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -87,6 +87,14 @@ export function Catalog() {
               </p>
             </div>
           ))}
+          {shipping.length > 1 && (
+            <a
+              href={BUNDLE.url}
+              className="inline-block pb-8 font-mono text-[11px] tracking-[0.22em] text-arsenic-bright hover:text-paper transition-colors duration-300"
+            >
+              THE COMPLETE LINE — ALL FOUR — {BUNDLE.price} →
+            </a>
+          )}
         </Reveal>
 
         {trial.length > 0 && (

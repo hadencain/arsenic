@@ -32,6 +32,15 @@ export interface Tool {
 export const BUTTONDOWN_USERNAME = "hadencain";
 export const SUPPORT_EMAIL = "haden.cain@gmail.com";
 
+// The four-pack storefront listing — site-level, not a shelf row.
+export interface Bundle {
+  title: string;
+  price: string;
+  url: string;
+}
+
+export const BUNDLE = data.bundle as Bundle;
+
 export const TOOLS = [...(data.tools as unknown as Tool[])].sort((a, b) => a.rank - b.rank);
 
 export function toolBySlug(slug: string): Tool | undefined {
