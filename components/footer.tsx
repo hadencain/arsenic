@@ -1,9 +1,11 @@
+import { SUPPORT_EMAIL } from "./registry";
+
 // Site-wide footer: the product-site plumbing row plus the single
 // colophon-level backlink — the only cross-brand edge on the site.
 const LINKS = [
   { href: "/eula", label: "EULA" },
   { href: "/refunds", label: "REFUNDS" },
-  { href: "mailto:haden.cain@gmail.com?subject=arsenic%20support", label: "SUPPORT" },
+  { href: `mailto:${SUPPORT_EMAIL}?subject=arsenic%20support`, label: "SUPPORT" },
   { href: "/changelog", label: "CHANGELOG" },
 ];
 

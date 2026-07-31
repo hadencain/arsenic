@@ -99,7 +99,7 @@ export function GravityWellLanding() {
       </div>
 
       <AudienceLine>{tool.audience}</AudienceLine>
-      <MediaSlot src={tool.screenshot} alt={`${tool.title} interface`} />
+      <MediaSlot src={tool.screenshot} alt={`${tool.title} interface`} size={tool.screenshotSize} />
       <FeatureBeats beats={BEATS} />
       <SpecPanel specs={tool.specs} />
       <motion.div

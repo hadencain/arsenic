@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SUPPORT_EMAIL } from "@/components/registry";
 
 export const metadata: Metadata = {
   title: "License — Arsenic",
@@ -14,7 +15,7 @@ const TERMS = [
   { name: "No warranty", text: "Provided as-is. These are creative tools that push audio hard — test in your host before session-critical work." },
   { name: "Liability", text: "Total liability is capped at the price you paid." },
   { name: "Termination", text: "Breaking these terms ends the license. Deleting your copies cures the breach." },
-  { name: "Contact", text: "Questions: haden.cain@gmail.com." },
+  { name: "Contact", text: `Questions: ${SUPPORT_EMAIL}.` },
 ];
 
 export default function EulaPage() {

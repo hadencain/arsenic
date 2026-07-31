@@ -89,27 +89,31 @@ export function Catalog() {
           ))}
         </Reveal>
 
-        <div className="border-t border-ink-3 pt-12 mt-4">
-          <Reveal>
-            <SectionLabel>In trial</SectionLabel>
-          </Reveal>
-          {trial.map((t, i) => (
-            <Reveal key={t.slug} i={i}>
-              <ToolRow tool={t} />
+        {trial.length > 0 && (
+          <div className="border-t border-ink-3 pt-12 mt-4">
+            <Reveal>
+              <SectionLabel>In trial</SectionLabel>
             </Reveal>
-          ))}
-        </div>
+            {trial.map((t, i) => (
+              <Reveal key={t.slug} i={i}>
+                <ToolRow tool={t} />
+              </Reveal>
+            ))}
+          </div>
+        )}
 
-        <div className="pt-12">
-          <Reveal>
-            <SectionLabel>In theory</SectionLabel>
-          </Reveal>
-          {theory.map((t, i) => (
-            <Reveal key={t.slug} i={i}>
-              <ToolRow tool={t} />
+        {theory.length > 0 && (
+          <div className="pt-12">
+            <Reveal>
+              <SectionLabel>In theory</SectionLabel>
             </Reveal>
-          ))}
-        </div>
+            {theory.map((t, i) => (
+              <Reveal key={t.slug} i={i}>
+                <ToolRow tool={t} />
+              </Reveal>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

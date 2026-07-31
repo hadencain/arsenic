@@ -50,7 +50,15 @@ export function FeatureBeats({
   );
 }
 
-export function MediaSlot({ src, alt }: { src?: string; alt: string }) {
+export function MediaSlot({
+  src,
+  alt,
+  size,
+}: {
+  src?: string;
+  alt: string;
+  size?: { w: number; h: number };
+}) {
   if (!src) return null;
   return (
     <motion.div
@@ -61,7 +69,19 @@ export function MediaSlot({ src, alt }: { src?: string; alt: string }) {
       transition={{ duration: 0.8, ease: EASE }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt={alt} className="w-full" loading="lazy" decoding="async" />
+      {size ? (
+        <img
+          src={src}
+          alt={alt}
+          width={size.w}
+          height={size.h}
+          className="w-full h-auto"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <img src={src} alt={alt} className="w-full" loading="lazy" decoding="async" />
+      )}
     </motion.div>
   );
 }

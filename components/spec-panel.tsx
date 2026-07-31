@@ -19,7 +19,7 @@ export function SpecPanel({ specs }: { specs: SpecRow[] }) {
     >
       {specs.map((s) => (
         <div key={s.label} className="flex items-baseline gap-6 py-1.5">
-          <dt className="text-[10px] font-mono tracking-[0.3em] uppercase text-paper-mute w-36 shrink-0">
+          <dt className="text-[10px] font-mono tracking-[0.3em] uppercase text-paper-mute w-28 md:w-36 shrink-0">
             {s.label}
           </dt>
           <dd className="text-[11px] font-mono tracking-[0.08em] text-arsenic-bright">

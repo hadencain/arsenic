@@ -3,7 +3,7 @@
     { "slug": "gravity-well", "title": "Gravity Well", "rank": 1, "state": "shipping", "price": "$19",
       "pitch": "A spectral black hole — audio redshifts toward a floor frequency and time dilates as mass accumulates.",
       "audience": "For sound designers chasing weight — scores, drones, sound that collapses inward.",
-      "tag": "gravity-well", "screenshot": "/shots/gravity-well.png", "ogImage": "/shots/gravity-well.png",
+      "tag": "gravity-well", "screenshot": "/shots/gravity-well.png", "screenshotSize": { "w": 691, "h": 700 }, "ogImage": "/shots/gravity-well.png",
       "capturePrompt": "Get the installer", "captureCta": "NOTIFY ME",
       "specs": [
         { "label": "Formulation", "value": "VST3 · 64-bit" },
@@ -16,7 +16,7 @@
     { "slug": "white-hole", "title": "White Hole", "rank": 2, "state": "trial",
       "pitch": "An anti-mass spectral leveler — buried detail lifts into audibility, peaks flatten toward the floor.",
       "audience": "For producers who want buried detail surfaced without a compressor's pumping.",
-      "tag": "white-hole", "screenshot": "/shots/white-hole.png", "ogImage": "/shots/white-hole.png",
+      "tag": "white-hole", "screenshot": "/shots/white-hole.png", "screenshotSize": { "w": 693, "h": 693 }, "ogImage": "/shots/white-hole.png",
       "capturePrompt": "Get the installer", "captureCta": "NOTIFY ME",
       "specs": [
         { "label": "Formulation", "value": "VST3 · 64-bit" },

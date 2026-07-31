@@ -22,12 +22,14 @@ export interface Tool {
   audience: string;   // "who it's for" line, in the audience's vocabulary
   tag: string;        // Buttondown tag; always === slug (unchanged from the portfolio era)
   screenshot?: string;
+  screenshotSize?: { w: number; h: number };
   ogImage?: string;
   capturePrompt: string;
   captureCta: string;
 }
 
 export const BUTTONDOWN_USERNAME = "hadencain";
+export const SUPPORT_EMAIL = "haden.cain@gmail.com";
 
 export const TOOLS = [...(data.tools as unknown as Tool[])].sort((a, b) => a.rank - b.rank);
 

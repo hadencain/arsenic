@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SUPPORT_EMAIL } from "@/components/registry";
 
 export const metadata: Metadata = {
   title: "Refunds — Arsenic",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
 
 const POLICY = [
   { name: "Window", text: "Fourteen days from purchase, no questions asked." },
-  { name: "How", text: "Email haden.cain@gmail.com from your purchase address with the order reference. Refunds return to the original payment method; the license is revoked on refund." },
+  { name: "How", text: `Email ${SUPPORT_EMAIL} from your purchase address with the order reference. Refunds return to the original payment method; the license is revoked on refund.` },
   { name: "Status", text: "Checkout has not yet opened. This is the policy that will govern the first sale." },
 ];
 

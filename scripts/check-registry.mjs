@@ -2,7 +2,10 @@
 //   - every tool slug has app/(tools)/<slug>/page.tsx
 //   - every directory under app/(tools)/ has a registry entry
 // Plus: required nonempty fields, tag === slug, unique slugs, unique ranks,
-// referenced screenshots exist under public/.
+// referenced screenshots exist under public/, state is a known enum, specs
+// shape + unique labels per tool, price present iff state is shipping,
+// exactly one shipping tool, screenshot/screenshotSize pair together, and
+// the portfolio's pinned 301-redirect targets stay in the registry.
 
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import path from "node:path";
@@ -33,13 +36,19 @@ for (const t of data.tools) {
     errors.push(`${id}: "state" must be one of ${STATES.join(" | ")}`);
   if (!Array.isArray(t.specs) || t.specs.length === 0)
     errors.push(`${id}: missing nonempty "specs" array`);
-  else
-    for (const row of t.specs)
+  else {
+    const specLabels = new Set();
+    for (const row of t.specs) {
       if (
         typeof row.label !== "string" || row.label.length === 0 ||
         typeof row.value !== "string" || row.value.length === 0
       )
         errors.push(`${id}: every specs row needs nonempty "label" and "value"`);
+      if (specLabels.has(row.label))
+        errors.push(`${id}: duplicate specs label "${row.label}"`);
+      specLabels.add(row.label);
+    }
+  }
   if (t.state === "shipping" && (typeof t.price !== "string" || t.price.length === 0))
     errors.push(`${id}: shipping tool needs a nonempty "price"`);
   if (t.state !== "shipping" && t.price !== undefined)
@@ -52,11 +61,27 @@ for (const t of data.tools) {
     if (p && !existsSync(path.join(repo, "public", p)))
       errors.push(`${id}: referenced asset ${p} missing from public/`);
   }
+  if (t.screenshot) {
+    const s = t.screenshotSize;
+    if (
+      typeof s !== "object" || s === null ||
+      typeof s.w !== "number" || s.w <= 0 ||
+      typeof s.h !== "number" || s.h <= 0
+    )
+      errors.push(`${id}: "screenshot" requires a "screenshotSize" with positive numeric w and h`);
+  } else if (t.screenshotSize !== undefined) {
+    errors.push(`${id}: "screenshotSize" present without "screenshot"`);
+  }
 }
 
 const shippingCount = data.tools.filter((t) => t.state === "shipping").length;
 if (shippingCount !== 1)
   errors.push(`exactly one tool must have state "shipping" (found ${shippingCount})`);
+
+const PINNED = ["tc-tools", "sample-viewer", "audio-sort"]; // portfolio 301 targets — never delete
+for (const s of PINNED)
+  if (!data.tools.find((t) => t.slug === s))
+    errors.push(`301 target "${s}" removed from registry`);
 
 const toolsDir = path.join(repo, "app/(tools)");
 const dirs = existsSync(toolsDir)
