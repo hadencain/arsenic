@@ -92,7 +92,7 @@ export function Catalog() {
         {trial.length > 0 && (
           <div className="border-t border-ink-3 pt-12 mt-4">
             <Reveal>
-              <SectionLabel>In trial</SectionLabel>
+              <SectionLabel>Coming soon</SectionLabel>
             </Reveal>
             {trial.map((t, i) => (
               <Reveal key={t.slug} i={i}>
@@ -105,7 +105,7 @@ export function Catalog() {
         {theory.length > 0 && (
           <div className="pt-12">
             <Reveal>
-              <SectionLabel>In theory</SectionLabel>
+              <SectionLabel>In development</SectionLabel>
             </Reveal>
             {theory.map((t, i) => (
               <Reveal key={t.slug} i={i}>

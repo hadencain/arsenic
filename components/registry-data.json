@@ -6,12 +6,12 @@
       "tag": "gravity-well", "screenshot": "/shots/gravity-well.png", "screenshotSize": { "w": 691, "h": 700 }, "ogImage": "/shots/gravity-well.png",
       "capturePrompt": "Get the installer", "captureCta": "NOTIFY ME",
       "specs": [
-        { "label": "Formulation", "value": "VST3 · 64-bit" },
-        { "label": "Vehicle", "value": "Windows 10+" },
-        { "label": "Concentration", "value": "44.1–192 kHz" },
-        { "label": "Mechanism", "value": "4096-pt STFT · 4× overlap" },
-        { "label": "Onset", "value": "4096 smp · ≈93 ms @ 44.1k" },
-        { "label": "Lot", "value": "1.0.0" }
+        { "label": "Format", "value": "VST3 · 64-bit" },
+        { "label": "System", "value": "Windows 10+" },
+        { "label": "Sample rate", "value": "44.1–192 kHz" },
+        { "label": "Engine", "value": "4096-pt STFT · 4× overlap" },
+        { "label": "Latency", "value": "4096 smp · ≈93 ms @ 44.1k" },
+        { "label": "Version", "value": "1.0.0" }
       ] },
     { "slug": "white-hole", "title": "White Hole", "rank": 2, "state": "trial",
       "pitch": "An anti-mass spectral leveler — buried detail lifts into audibility, peaks flatten toward the floor.",
@@ -19,78 +19,78 @@
       "tag": "white-hole", "screenshot": "/shots/white-hole.png", "screenshotSize": { "w": 693, "h": 693 }, "ogImage": "/shots/white-hole.png",
       "capturePrompt": "Get the installer", "captureCta": "NOTIFY ME",
       "specs": [
-        { "label": "Formulation", "value": "VST3 · 64-bit" },
-        { "label": "Vehicle", "value": "Windows 10+" },
-        { "label": "Concentration", "value": "44.1–192 kHz" },
-        { "label": "Mechanism", "value": "4096-pt STFT · phase-preserving" },
-        { "label": "Onset", "value": "4096 smp · ≈93 ms @ 44.1k" },
-        { "label": "Lot", "value": "1.0.0" }
+        { "label": "Format", "value": "VST3 · 64-bit" },
+        { "label": "System", "value": "Windows 10+" },
+        { "label": "Sample rate", "value": "44.1–192 kHz" },
+        { "label": "Engine", "value": "4096-pt STFT · phase-preserving" },
+        { "label": "Latency", "value": "4096 smp · ≈93 ms @ 44.1k" },
+        { "label": "Version", "value": "1.0.0" }
       ] },
     { "slug": "smear", "title": "Smear", "rank": 3, "state": "trial",
       "pitch": "Spectral blur — sound smears through time, from intact pitch to infinite wash.",
       "audience": "For sound designers and ambient producers who want motion frozen into texture.",
       "tag": "smear", "capturePrompt": "Get the installer", "captureCta": "NOTIFY ME",
       "specs": [
-        { "label": "Formulation", "value": "VST3 · 64-bit" },
-        { "label": "Vehicle", "value": "Windows 10+" },
-        { "label": "Concentration", "value": "44.1–192 kHz" },
-        { "label": "Mechanism", "value": "4096-pt STFT · 4× overlap" },
-        { "label": "Onset", "value": "4096 smp · ≈93 ms @ 44.1k" },
-        { "label": "Lot", "value": "1.0.0" }
+        { "label": "Format", "value": "VST3 · 64-bit" },
+        { "label": "System", "value": "Windows 10+" },
+        { "label": "Sample rate", "value": "44.1–192 kHz" },
+        { "label": "Engine", "value": "4096-pt STFT · 4× overlap" },
+        { "label": "Latency", "value": "4096 smp · ≈93 ms @ 44.1k" },
+        { "label": "Version", "value": "1.0.0" }
       ] },
     { "slug": "fracture", "title": "Fracture", "rank": 4, "state": "trial",
       "pitch": "Granular reverb — a reverb tail fragmented into crystalline, disintegrating decays.",
       "audience": "For producers who want reverbs that fall apart beautifully instead of just fading.",
       "tag": "fracture", "capturePrompt": "Get the installer", "captureCta": "NOTIFY ME",
       "specs": [
-        { "label": "Formulation", "value": "VST3 · 64-bit" },
-        { "label": "Vehicle", "value": "Windows 10+" },
-        { "label": "Concentration", "value": "44.1–192 kHz" },
-        { "label": "Mechanism", "value": "granular grain engine" },
-        { "label": "Onset", "value": "0 smp · direct" },
-        { "label": "Lot", "value": "1.0.0" }
+        { "label": "Format", "value": "VST3 · 64-bit" },
+        { "label": "System", "value": "Windows 10+" },
+        { "label": "Sample rate", "value": "44.1–192 kHz" },
+        { "label": "Engine", "value": "granular grain engine" },
+        { "label": "Latency", "value": "0 smp · direct" },
+        { "label": "Version", "value": "1.0.0" }
       ] },
     { "slug": "spectral-shuffler", "title": "Spectral Shuffler", "rank": 5, "state": "theory",
       "pitch": "Captures FFT frames from a chosen frequency band and replays them at random — freeze, scatter, or stutter a range while the rest of the signal passes clean.",
       "audience": "For sound designers who want to seize one frequency band and shuffle it without touching the rest.",
       "tag": "spectral-shuffler", "capturePrompt": "Get the installer", "captureCta": "NOTIFY ME",
       "specs": [
-        { "label": "Formulation", "value": "VST3 · 64-bit" },
-        { "label": "Vehicle", "value": "Windows 10+" },
-        { "label": "Concentration", "value": "44.1–192 kHz" },
-        { "label": "Mechanism", "value": "2048-pt FFT · band capture" },
-        { "label": "Onset", "value": "2048 smp · ≈46 ms @ 44.1k" },
-        { "label": "Lot", "value": "1.0.0 · unreleased" }
+        { "label": "Format", "value": "VST3 · 64-bit" },
+        { "label": "System", "value": "Windows 10+" },
+        { "label": "Sample rate", "value": "44.1–192 kHz" },
+        { "label": "Engine", "value": "2048-pt FFT · band capture" },
+        { "label": "Latency", "value": "2048 smp · ≈46 ms @ 44.1k" },
+        { "label": "Version", "value": "1.0.0 · unreleased" }
       ] },
     { "slug": "tc-tools", "title": "TC Tools", "rank": 6, "state": "delisted",
       "pitch": "A growing family of terminal-controlled instruments — drive a granular synth and a drum machine entirely from the command line, each with a live Textual TUI.",
       "audience": "For musicians who live in the terminal and want instruments that speak the same language.",
       "tag": "tc-tools", "capturePrompt": "Get notified", "captureCta": "NOTIFY ME",
       "specs": [
-        { "label": "Formulation", "value": "Python · terminal TUI" },
-        { "label": "Vehicle", "value": "Windows · Python 3.14" },
+        { "label": "Format", "value": "Python · terminal TUI" },
+        { "label": "System", "value": "Windows · Python 3.14" },
         { "label": "Instruments", "value": "granular synth · drum machine" },
-        { "label": "Lot", "value": "pre-release" }
+        { "label": "Version", "value": "pre-release" }
       ] },
     { "slug": "sample-viewer", "title": "sampleViewer", "rank": 7, "state": "delisted",
       "pitch": "Your sample library as a navigable map — tempo, key, and sonic similarity, drag straight into your DAW.",
       "audience": "For producers whose sample library outgrew their memory of it.",
       "tag": "sample-viewer", "capturePrompt": "Join the beta", "captureCta": "JOIN BETA",
       "specs": [
-        { "label": "Formulation", "value": "desktop app · Tauri" },
-        { "label": "Vehicle", "value": "Windows 10+" },
-        { "label": "Mechanism", "value": "audio similarity map" },
-        { "label": "Lot", "value": "beta" }
+        { "label": "Format", "value": "desktop app · Tauri" },
+        { "label": "System", "value": "Windows 10+" },
+        { "label": "Engine", "value": "audio similarity map" },
+        { "label": "Version", "value": "beta" }
       ] },
     { "slug": "audio-sort", "title": "audioSort", "rank": 8, "state": "delisted",
       "pitch": "Auto-sorts a sample library by reading path context, file metadata, and librosa spectral analysis — every sample filed into the right folder, in place.",
       "audience": "For producers whose sample folder became a landfill they never tagged.",
       "tag": "audio-sort", "capturePrompt": "Get notified", "captureCta": "NOTIFY ME",
       "specs": [
-        { "label": "Formulation", "value": "Python CLI" },
-        { "label": "Vehicle", "value": "Windows · Python 3.14" },
-        { "label": "Mechanism", "value": "librosa spectral analysis" },
-        { "label": "Lot", "value": "pre-release" }
+        { "label": "Format", "value": "Python CLI" },
+        { "label": "System", "value": "Windows · Python 3.14" },
+        { "label": "Engine", "value": "librosa spectral analysis" },
+        { "label": "Version", "value": "pre-release" }
       ] }
   ]
 }

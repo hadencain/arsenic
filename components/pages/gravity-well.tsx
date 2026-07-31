@@ -110,29 +110,28 @@ export function GravityWellLanding() {
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.8, ease: EASE }}
       >
-        <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-[#7c7a6d] mb-3">
-          Acquire
-        </p>
         <div className="flex items-baseline gap-4">
           <span className="font-mono text-[16px] text-arsenic-bright">{tool.price}</span>
           <span className="text-[12px] text-[#868376] font-light">Windows VST3 installer</span>
         </div>
-        <span
-          aria-disabled="true"
-          className="mt-4 inline-block border border-arsenic px-5 py-2.5 font-mono text-[11px] tracking-[0.22em] text-arsenic-bright/70 cursor-not-allowed select-none"
+        <a
+          href="#notify"
+          className="mt-4 inline-block border border-arsenic px-5 py-2.5 font-mono text-[11px] tracking-[0.22em] text-arsenic-bright hover:bg-arsenic/20 transition-colors duration-300"
         >
-          BUY — CHECKOUT OPENING SOON
-        </span>
+          GET NOTIFIED
+        </a>
         <p className="mt-3 text-[11px] text-[#7c7a6d] font-light leading-relaxed">
-          The release email below carries the buy link the day checkout opens.
+          Checkout opens soon — the release email carries the buy link first.
         </p>
       </motion.div>
-      <EmailCapture
-        tag={tool.tag}
-        prompt={tool.capturePrompt}
-        cta={tool.captureCta}
-        hint={CAPTURE_HINT}
-      />
+      <div id="notify" className="scroll-mt-28">
+        <EmailCapture
+          tag={tool.tag}
+          prompt={tool.capturePrompt}
+          cta={tool.captureCta}
+          hint={CAPTURE_HINT}
+        />
+      </div>
 
     </section>
   );
